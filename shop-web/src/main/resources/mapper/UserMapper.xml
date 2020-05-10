@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.help996.shopdao.mapper.UserMapper">
+
+
+    <select id="getUser" parameterType="String" resultType="com.help996.shopdao.entity.po.User">
+      select * from demo_user a where a.id = #{userid}
+    </select>
+
+
+</mapper>

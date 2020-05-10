@@ -1,0 +1,22 @@
+
+#连接池
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  spring:
+    datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      druid:
+        url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+        username: tjzxzs
+        password: tjzxzs
+##########################  mybatis   ##########################
+
+  mybatis:
+    type-aliases-package: com.help996.shopdao.entity.po
+    mapper-locations: classpath:mapper/*Mapper.xml
+
+
+
+
+  server:
+    port: 8082
