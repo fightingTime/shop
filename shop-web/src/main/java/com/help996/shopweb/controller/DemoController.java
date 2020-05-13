@@ -4,9 +4,8 @@ import com.help996.shopbase.utils.JsonResult;
 import com.help996.shopdao.entity.po.User;
 import com.help996.shopservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author zzf
@@ -16,15 +15,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "Spring Security";
+    }
+
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/user")
-    public JsonResult getUser(String userId) {
-        System.out.println("----");
-        User user = userService.getUser(userId);
-        JsonResult result = new JsonResult(user);
-        return result;
-    }
+//    @PostMapping("/doLogin")
+//    public String doLogin(@RequestParam(value = "username", required = true) String username,
+//                              @RequestParam(value = "password", required = true) String password) {
+//        System.out.println("----");
+//        User user = userService.getUser("1");
+//        JsonResult result = new JsonResult(user);
+//        return "1";
+//    }
+//
+//    @GetMapping("/getuser")
+//    public JsonResult getUser() {
+//        System.out.println("----");
+//        User user = userService.getUser("1");
+//        JsonResult result = new JsonResult(user);
+//        return result;
+//    }
+
 
 }
